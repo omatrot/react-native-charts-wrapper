@@ -35,6 +35,7 @@ public class RadarDataExtract extends DataExtract<RadarData, RadarEntry> {
         ChartDataSetConfigUtils.commonConfig(chart, radarDataSet, config);
         ChartDataSetConfigUtils.commonLineScatterCandleRadarConfig(radarDataSet, config);
         ChartDataSetConfigUtils.commonLineRadarConfig(radarDataSet, config);
+        ChartDataSetConfigUtils.commonRadarConfig(radarDataSet, config);
 
         // RadarDataSet only config
     }
