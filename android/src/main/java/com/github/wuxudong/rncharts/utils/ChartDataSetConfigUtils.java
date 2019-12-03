@@ -9,6 +9,7 @@ import com.github.mikephil.charting.data.BarLineScatterCandleBubbleDataSet;
 import com.github.mikephil.charting.data.DataSet;
 import com.github.mikephil.charting.data.LineRadarDataSet;
 import com.github.mikephil.charting.data.LineScatterCandleRadarDataSet;
+import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
@@ -79,7 +80,14 @@ public class ChartDataSetConfigUtils {
                 if (BridgeUtils.validate(config, ReadableType.String, "timeUnit")) {
                     timeUnit = TimeUnit.valueOf(config.getString("timeUnit").toUpperCase());
                 }
-                dataSet.setValueFormatter(new DateFormatter(valueFormatterPattern, since, timeUnit));
+
+                Locale locale = Locale.getDefault();
+                
+                if (BridgeUtils.validate(config, ReadableType.String, "locale")) {
+                    locale = Locale.forLanguageTag(config.getString("locale"));
+                }
+
+                dataSet.setValueFormatter(new DateFormatter(valueFormatterPattern, since, timeUnit, locale));
             } else {
                 dataSet.setValueFormatter(new CustomFormatter(valueFormatter));
             }
@@ -115,6 +123,13 @@ public class ChartDataSetConfigUtils {
         }
         if (BridgeUtils.validate(config, ReadableType.Number, "highlightLineWidth")) {
             dataSet.setHighlightLineWidth((float) config.getDouble("highlightLineWidth"));
+        }
+    }
+
+    public static void commonRadarConfig(RadarDataSet dataSet, ReadableMap config)
+    {
+        if (BridgeUtils.validate(config, ReadableType.Boolean, "drawHighlightCircleIndicator")) {
+            dataSet.setDrawHighlightCircleEnabled(config.getBoolean("drawHighlightCircleIndicator"));
         }
     }
 
