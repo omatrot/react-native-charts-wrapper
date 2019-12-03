@@ -101,6 +101,13 @@ class ChartDataSetConfigUtils: NSObject {
         }
     }
 
+    static func commonRadarConfig(_ dataSet: LineScatterCandleRadarChartDataSet, config: JSON) {
+    {
+        if config["drawHighlightCircleIndicator"].bool != nil {
+            dataSet.drawHighlightCircleIndicatorEnabled = config["drawHighlightCircleIndicator"].boolValue;
+        }
+    }
+
     static func commonLineRadarConfig( _ dataSet:LineRadarChartDataSet,  config:JSON) {
         if let fillGradient = config["fillGradient"].dictionary {
             let colors = fillGradient["colors"]?.array!.map { RCTConvert.uiColor($0.int)!.cgColor }
