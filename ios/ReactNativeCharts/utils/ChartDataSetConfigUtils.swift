@@ -102,10 +102,9 @@ class ChartDataSetConfigUtils: NSObject {
         }
     }
 
-    static func commonRadarConfig(_ dataSet: LineScatterCandleRadarChartDataSet, config: JSON) {
-    {
+    static func commonRadarConfig(_ dataSet: RadarChartDataSet, config: JSON) {
         if config["drawHighlightCircleIndicator"].bool != nil {
-            dataSet.drawHighlightCircleIndicatorEnabled = config["drawHighlightCircleIndicator"].boolValue;
+            dataSet.drawHighlightCircleEnabled = config["drawHighlightCircleIndicator"].boolValue;
         }
     }
 
@@ -138,6 +137,4 @@ class ChartDataSetConfigUtils: NSObject {
             dataSet.lineWidth = CGFloat(config["lineWidth"].floatValue);
         }
     }
-
-
 }

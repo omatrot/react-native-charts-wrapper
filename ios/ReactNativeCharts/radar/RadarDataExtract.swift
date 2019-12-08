@@ -17,11 +17,12 @@ class RadarDataExtract : DataExtract {
     }
     
     override func dataSetConfig(_ dataSet: IChartDataSet, config: JSON) {
-        let barDataSet = dataSet as! RadarChartDataSet
+        let radarDataSet = dataSet as! RadarChartDataSet
         
-        ChartDataSetConfigUtils.commonConfig(barDataSet, config: config);
-        ChartDataSetConfigUtils.commonBarLineScatterCandleBubbleConfig(barDataSet, config: config);
-        ChartDataSetConfigUtils.commonLineRadarConfig(barDataSet, config: config);
+        ChartDataSetConfigUtils.commonConfig(radarDataSet, config: config);
+        ChartDataSetConfigUtils.commonBarLineScatterCandleBubbleConfig(radarDataSet, config: config);
+        ChartDataSetConfigUtils.commonLineRadarConfig(radarDataSet, config: config);
+        ChartDataSetConfigUtils.commonRadarConfig(radarDataSet, config: config);
     }
     
     override func createEntry(_ values: [JSON], index: Int) -> RadarChartDataEntry {
