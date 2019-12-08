@@ -25,7 +25,6 @@ class LineDataExtract : DataExtract {
         ChartDataSetConfigUtils.commonBarLineScatterCandleBubbleConfig(lineDataSet, config: config);
         ChartDataSetConfigUtils.commonLineScatterCandleRadarConfig(lineDataSet, config: config);
         ChartDataSetConfigUtils.commonLineRadarConfig(lineDataSet, config: config);
-        ChartDataSetConfigUtils.commonRadarConfig(lineDataSet, config: config);
         
         // LineDataSet only config
         if config["circleRadius"].number != nil {
