@@ -131,6 +131,9 @@ public class ChartDataSetConfigUtils {
         if (BridgeUtils.validate(config, ReadableType.Boolean, "drawHighlightCircleIndicator")) {
             dataSet.setDrawHighlightCircleEnabled(config.getBoolean("drawHighlightCircleIndicator"));
         }
+        if (BridgeUtils.validate(config, ReadableType.Number, "highlightCircleFillColor")) {
+            dataSet.setHighLightColor(config.getInt("highlightCircleFillColor"));
+        }
     }
 
     public static void commonLineRadarConfig(LineRadarDataSet dataSet, ReadableMap config) {

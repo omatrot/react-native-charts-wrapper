@@ -106,6 +106,9 @@ class ChartDataSetConfigUtils: NSObject {
         if config["drawHighlightCircleIndicator"].bool != nil {
             dataSet.drawHighlightCircleEnabled = config["drawHighlightCircleIndicator"].boolValue;
         }
+        if config["highlightCircleFillColor"].int != nil {
+            dataSet.highlightCircleFillColor = RCTConvert.uiColor(config["highlightCircleFillColor"].intValue);
+        }
     }
 
     static func commonLineRadarConfig( _ dataSet:LineRadarChartDataSet,  config:JSON) {
