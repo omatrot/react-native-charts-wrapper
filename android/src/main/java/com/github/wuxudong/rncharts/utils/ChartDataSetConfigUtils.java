@@ -132,7 +132,7 @@ public class ChartDataSetConfigUtils {
             dataSet.setDrawHighlightCircleEnabled(config.getBoolean("drawHighlightCircleIndicator"));
         }
         if (BridgeUtils.validate(config, ReadableType.Number, "highlightCircleFillColor")) {
-            dataSet.setHighLightColor(config.getInt("highlightCircleFillColor"));
+            dataSet.setHighlightCircleFillColor(config.getInt("highlightCircleFillColor"));
         }
     }
 
